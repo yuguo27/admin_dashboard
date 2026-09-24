@@ -82,10 +82,29 @@ img{
   padding: 10px;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "search profile"
+    "message buttons";
   background-color: white;
+}
+.message-profile p:nth-child(2) {
+  font-size: 20px;
+}
+
+.header .profile{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  grid-area: profile;
+}
+
+.profile p{
+  margin: 0;
+  
 }
 
 .searchbar {
+  grid-area: search;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -117,11 +136,14 @@ button{
 }
 
 .buttons{
+  grid-area: buttons;
   display: flex;
   gap: 10px;
 }
 
-
+.header .message{
+  grid-area: message;
+}
 /*content part*/
 .main{
   display: grid;
@@ -159,6 +181,7 @@ button{
   height: 200px;
   border-radius: 3%;
   border-left: 5px solid orange;
+  display: grid;
 }
 
 .article .card p {
@@ -173,6 +196,10 @@ button{
   text-align: center;
 }
 
+.article .images{
+  align-self: flex-end;
+  justify-self: flex-end;
+}
 /*announcement part*/
 
 .anouncement{
